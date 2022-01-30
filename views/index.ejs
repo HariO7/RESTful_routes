@@ -1,0 +1,15 @@
+<%- include("partials/header") -%>
+<div id="masthead" class="ui inverted masthead center aligned segment">
+    <h1>Welcome to the Blog site!!!!!</h1>
+</div>
+    <div class="ui main text container segment">
+        <% blogs.forEach(function(blog){  %>
+        <h2><%= blog.name %></h2>
+        <img class="ui fluid image" src="<%= blog.image %>" >
+        <p class="date"><span class="date"><%= blog.created.toDateString() %></span></p>
+        <p><%= blog.body.substring(0,100) %>...</p>
+        <a class="ui blue button center aligned" href="/blogs/<%=blog._id %>">Read more</a>
+    <%});%>
+    </div>
+    
+<%- include("partials/footer") -%>
