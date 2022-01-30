@@ -4,9 +4,11 @@ var express= require('express'),
     bodyParser= require('body-parser'),
     mongoose= require('mongoose');
 
+    require('dotenv').config()
 
 //App config
-mongoose.connect('mongodb+srv://hari:hari@cluster0.qzlre.mongodb.net/rest_blog_app?retryWrites=true&w=majority');
+mongoose.connect(process.env.database);
+
 app.set('view engine','ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));
